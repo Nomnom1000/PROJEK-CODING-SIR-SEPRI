@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}{{ lesson.title }} - English Learning
+Hub{% endblock %} {% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">{{ lesson.title }}</h2>
+        </div>
+        <div class="card-body">
+          {% if progress %}
+          <div class="alert alert-info">
+            <h4>Your Progress</h4>
+            <p>Lessons completed: {{ progress.grammar_completed }}</p>
+          </div>
+          {% endif %}
+
+          <div class="mb-4">
+            <h4>Explanation</h4>
+            <p>{{ lesson.explanation }}</p>
+          </div>
+
+          <div class="mb-4">
+            <h4>Example</h4>
+            <p class="lead">{{ lesson.example }}</p>
+          </div>
+
+          <div class="d-grid gap-2">
+            <a
+              href="{{ url_for('learning.grammar') }}"
+              class="btn btn-secondary"
+            >
+              Back to Grammar Lessons
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

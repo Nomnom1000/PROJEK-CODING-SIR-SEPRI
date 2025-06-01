@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block title %}Quiz - English Learning Hub{%
+endblock %} {% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">English Quiz</h2>
+        </div>
+        <div class="card-body">
+          {% if progress %}
+          <div class="alert alert-info">
+            <h4>Your Progress</h4>
+            <p>Best quiz score: {{ progress.quiz_score or 0 }}</p>
+          </div>
+          {% endif %} {% if current_question %}
+          <form method="POST">
+            <div class="mb-4">
+              <h4>Question:</h4>
+              <p class="lead">{{ current_question.text }}</p>
+            </div>
+
+            <div class="mb-4">
+              <h4>Options:</h4>
+              <div class="list-group">
+                <label class="list-group-item">
+                  <input type="radio" name="answer" value="1" required />
+                  {{ current_question.option1 }}
+                </label>
+                <label class="list-group-item">
+                  <input type="radio" name="answer" value="2" required />
+                  {{ current_question.option2 }}
+                </label>
+                <label class="list-group-item">
+                  <input type="radio" name="answer" value="3" required />
+                  {{ current_question.option3 }}
+                </label>
+                <label class="list-group-item">
+                  <input type="radio" name="answer" value="4" required />
+                  {{ current_question.option4 }}
+                </label>
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">
+                Submit Answer
+              </button>
+            </div>
+          </form>
+          {% elif score is defined %}
+          <div class="text-center">
+            <h3>Quiz Results</h3>
+            <p class="lead">
+              Your score: {{ score }} out of {{ total_questions }}
+            </p>
+            <div class="mt-4">
+              <a href="{{ url_for('learning.quiz') }}" class="btn btn-primary"
+                >Take Another Quiz</a
+              >
+              <a
+                href="{{ url_for('main.dashboard') }}"
+                class="btn btn-secondary"
+                >Back to Dashboard</a
+              >
+            </div>
+          </div>
+          {% else %}
+          <div class="alert alert-info">
+            No questions available at the moment. Please try again later.
+          </div>
+          <div class="text-center mt-4">
+            <a href="{{ url_for('main.dashboard') }}" class="btn btn-primary"
+              >Back to Dashboard</a
+            >
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

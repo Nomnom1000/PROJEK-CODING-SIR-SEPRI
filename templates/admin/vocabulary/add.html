@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}Add Vocabulary - Admin{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="mb-4">Add New Vocabulary Word</h1>
+
+      <div class="card">
+        <div class="card-body">
+          <form method="POST">
+            <div class="mb-3">
+              <label for="word" class="form-label">Word</label>
+              <input
+                type="text"
+                class="form-control"
+                id="word"
+                name="word"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="meaning" class="form-label">Meaning</label>
+              <textarea
+                class="form-control"
+                id="meaning"
+                name="meaning"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="example" class="form-label">Example Usage</label>
+              <textarea
+                class="form-control"
+                id="example"
+                name="example"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Add Word</button>
+              <a
+                href="{{ url_for('admin.vocabulary_list') }}"
+                class="btn btn-outline-secondary"
+                >Cancel</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

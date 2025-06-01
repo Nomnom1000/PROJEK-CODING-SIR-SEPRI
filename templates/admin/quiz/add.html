@@ -1,0 +1,100 @@
+{% extends "base.html" %} {% block title %}Add Quiz - Admin{% endblock %} {%
+block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="mb-4">Add Quiz Question</h1>
+
+      <div class="card">
+        <div class="card-body">
+          <form method="POST">
+            <div class="mb-3">
+              <label for="question" class="form-label">Question</label>
+              <textarea
+                class="form-control"
+                id="question"
+                name="question"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="option1" class="form-label">Option 1</label>
+              <input
+                type="text"
+                class="form-control"
+                id="option1"
+                name="option1"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="option2" class="form-label">Option 2</label>
+              <input
+                type="text"
+                class="form-control"
+                id="option2"
+                name="option2"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="option3" class="form-label">Option 3</label>
+              <input
+                type="text"
+                class="form-control"
+                id="option3"
+                name="option3"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="option4" class="form-label">Option 4</label>
+              <input
+                type="text"
+                class="form-control"
+                id="option4"
+                name="option4"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="correct_option" class="form-label"
+                >Correct Option</label
+              >
+              <select
+                class="form-select"
+                id="correct_option"
+                name="correct_option"
+                required
+              >
+                <option value="">Select correct option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+              </select>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">
+                Add Question
+              </button>
+              <a
+                href="{{ url_for('admin.quiz_list') }}"
+                class="btn btn-outline-secondary"
+                >Cancel</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block title %}About - English Learning Hub{%
+endblock %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="mb-4">About English Learning Hub</h1>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Our Mission</h5>
+          <p class="card-text">
+            English Learning Hub is dedicated to helping learners improve their
+            English language skills through interactive and engaging content.
+            Our platform provides a comprehensive learning experience with
+            vocabulary building, grammar lessons, and interactive quizzes.
+          </p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Features</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Vocabulary Building:</strong> Learn new words and their
+              usage in context
+            </li>
+            <li class="list-group-item">
+              <strong>Grammar Lessons:</strong> Master English grammar with
+              clear explanations and examples
+            </li>
+            <li class="list-group-item">
+              <strong>Interactive Quizzes:</strong> Test your knowledge and
+              track your progress
+            </li>
+            <li class="list-group-item">
+              <strong>Personalized Dashboard:</strong> Monitor your learning
+              journey and achievements
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Get Started</h5>
+          <p class="card-text">
+            Join our community of learners today and start your journey to
+            English proficiency. Create an account to access all features and
+            track your progress.
+          </p>
+          {% if not current_user.is_authenticated %}
+          <div class="mt-3">
+            <a
+              href="{{ url_for('auth.register') }}"
+              class="btn btn-primary me-2"
+              >Register</a
+            >
+            <a
+              href="{{ url_for('auth.login') }}"
+              class="btn btn-outline-primary"
+              >Login</a
+            >
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

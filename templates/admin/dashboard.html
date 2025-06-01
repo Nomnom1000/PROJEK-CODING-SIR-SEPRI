@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block title %}Admin Dashboard - English Learning
+Hub{% endblock %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="mb-4">Admin Dashboard</h1>
+
+      <div class="row">
+        <!-- Vocabulary Management -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Vocabulary Management</h5>
+              <p class="card-text">Add, edit, and manage vocabulary words.</p>
+              <div class="d-grid gap-2">
+                <a
+                  href="{{ url_for('admin.vocabulary_list') }}"
+                  class="btn btn-primary"
+                  >Manage Vocabulary</a
+                >
+                <a
+                  href="{{ url_for('admin.vocabulary_add') }}"
+                  class="btn btn-outline-primary"
+                  >Add New Word</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grammar Management -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Grammar Management</h5>
+              <p class="card-text">Add, edit, and manage grammar lessons.</p>
+              <div class="d-grid gap-2">
+                <a
+                  href="{{ url_for('admin.grammar_list') }}"
+                  class="btn btn-primary"
+                  >Manage Grammar</a
+                >
+                <a
+                  href="{{ url_for('admin.grammar_add') }}"
+                  class="btn btn-outline-primary"
+                  >Add New Lesson</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Management -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Quiz Management</h5>
+              <p class="card-text">Add, edit, and manage quiz questions.</p>
+              <div class="d-grid gap-2">
+                <a
+                  href="{{ url_for('admin.quiz_list') }}"
+                  class="btn btn-primary"
+                  >Manage Quizzes</a
+                >
+                <a
+                  href="{{ url_for('admin.quiz_add') }}"
+                  class="btn btn-outline-primary"
+                  >Add New Question</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
