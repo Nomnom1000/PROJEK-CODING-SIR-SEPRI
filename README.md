@@ -1,6 +1,7 @@
+![Screenshot 2025-06-01 221049](https://github.com/user-attachments/assets/c3e7b503-71c7-4c6f-a124-70057eb9c168)
+
 # PROJEK-CODING-SIR-SEPRI
 # Aplikasi Belajar Bahasa Inggris
-
 Aplikasi web berbasis Flask untuk membantu siswa mempelajari Bahasa Inggris, termasuk kosakata, tata bahasa, dan latihan kuis interaktif. Aplikasi ini juga menyediakan fitur pelacakan progres belajar dan halaman admin.
 
 ## Fitur
